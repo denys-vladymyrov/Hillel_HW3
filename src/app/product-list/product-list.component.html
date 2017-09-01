@@ -1,0 +1,10 @@
+
+  <ul>
+    <li *ngFor="let item of productService.shoppingList" (click)="onSelect(item)" [ngClass]="{ 'lineThrough': item.done === true }">{{item.name}}</li>
+  </ul>
+  
+  
+  <input #product type="text" placeholder="Введите продукт">
+  <textarea #desc placeholder="Введите описание"></textarea>
+  <button (click)="productService.addProduct(product, desc)">Добавить</button>
+  
