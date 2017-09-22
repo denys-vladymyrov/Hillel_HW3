@@ -12,9 +12,8 @@ import { Product } from '.././shared/product';
     
     constructor(private router: Router, private productService: ProductServices) {}
     
-    onSelect(selected: Product){
-      // this.productService.productClick(Product);
-      this.router.navigate(["details", selected.id]);
+    onSelect(id){
+      this.router.navigate(["details", id]);
     }
     
   

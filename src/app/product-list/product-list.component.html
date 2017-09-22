@@ -1,6 +1,6 @@
 
   <ul>
-    <li *ngFor="let item of productService.shoppingList" (click)="onSelect(item)" [ngClass]="{ 'lineThrough': item.done === true }">{{item.name}}</li>
+    <li *ngFor="let item of productService.shoppingList; let i = index" (click)="onSelect(i)" [ngClass]="{ 'lineThrough': item.done === true }">{{item.name}}</li>
   </ul>
   
   

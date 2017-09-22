@@ -1,0 +1,16 @@
+<div *ngIf="!message && !authService.isLoggedIn">
+    <label for="login">Login</label>
+    <input #login type="text" id="login">
+  
+    <label for="password">Password</label>
+    <input #password type="password" id="password">
+  
+    <button (click)="logIn(login.value, password.value)">Login</button>
+  </div>
+  <div *ngIf="message">
+    {{message}}
+  </div>
+  <button *ngIf="authService.isLoggedIn"
+          (click)="logOut()">Log out</button>
+  
+  

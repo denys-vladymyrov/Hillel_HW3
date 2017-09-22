@@ -9,14 +9,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component'
 
 import { ProductServices } from './shared/product.service'
-
-
-
-const appRoutes: Routes =[
-  { path: '', component: ProductListComponent},
-  { path: 'details', component: ProductDetailsComponent},
-  { path: 'details/:id', component: ProductDetailsComponent}
-];
+import { appRoutes } from "./app.routes";
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -28,6 +22,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     FormsModule,
+    AdminModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductServices],
