@@ -1,0 +1,27 @@
+
+<form #userForm="ngForm" id="editForm" (ngSubmit)="onSubmit(userForm)">
+  <div class="group">
+    <label for="name">Name</label>
+    <input [(ngModel)]="product.name" id="name" name="name"  >
+  </div>  
+
+  <div class="group">
+    <label for="desc">Description</label>
+    <textarea [(ngModel)]="product.desc" name="" id="desc" name="desc"  ></textarea>
+  </div>
+
+  <div class="group">
+      <label for="done">Done</label>
+      <input [(ngModel)]="product.done" type="checkbox" name="done"  >
+  </div>
+
+  <button>Save</button>
+
+  <div class="nav-buttons">
+    <button [disabled]="prevDisabled" #prevBtn (click)="prev(prevBtn)">prev</button> 
+    <button [disabled]="nextDisabled" (click)="next()">next</button>
+  </div>
+  
+
+</form>
+

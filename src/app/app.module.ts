@@ -14,10 +14,12 @@ import { appRoutes } from "./app.routes";
 import { AdminModule } from './admin/admin.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductDetailsComponent
+ 
   ],
   imports: [
     BrowserModule,

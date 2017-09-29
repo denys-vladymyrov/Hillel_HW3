@@ -1,0 +1,10 @@
+textarea,
+input{
+   max-width: 200px;
+   width: 100%;
+}
+textarea{
+   display: block;
+   margin: 10px 0 20px;
+   height: 100px;
+}

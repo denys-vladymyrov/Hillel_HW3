@@ -32,6 +32,15 @@ export class ProductServices{
       getProduct(id: number): Product{
         return this.shoppingList[id];
       }
+
+      getProductAmount(): number{
+        return this.shoppingList.length;
+      }
+      
+
+      editProduct(id: number, product: Product){
+        this.shoppingList[id] = product;
+      }
     
       productChangeStatus(item: Product): void{
         item.done = !item.done;

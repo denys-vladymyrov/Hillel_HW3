@@ -14,11 +14,11 @@ import { Product } from '.././shared/product';
     
     constructor(private productService: ProductServices,
                 private router: Router,
-                private activatedRoute: ActivatedRoute,) {}
+                private activatedRoute: ActivatedRoute) {}
   
     ngOnInit() {
       let id = +this.activatedRoute.snapshot.params["id"];
       this.product = this.productService.getProduct(id);
-  }
+    }
   
   }
