@@ -1,3 +1,8 @@
-<input #product type="text" placeholder="Введите продукт">
-<textarea #desc placeholder="Введите описание"></textarea>
-<button (click)="productService.addProduct(product, desc)">Добавить</button>
+<div class="add-wrap panel-left-top">
+    <div class="add-form">
+        <h2>Add product</h2>
+        <input #product type="text" placeholder="Введите продукт">
+        <textarea #desc placeholder="Введите описание"></textarea>
+        <button class="black-btn" (click)="productService.addProduct(product, desc)"><span>Add</span></button>
+    </div>
+</div>

@@ -1,8 +1,9 @@
-  <div *ngIf="product" [ngClass]="{ 'lineThrough': product.done === true }">
-    <h2>Selected Priduct</h2>
-    Name: {{product.name}} <br /> 
-    IsDone: {{product.done}} <br />
-    Description: {{product.desc}} <br />
-  
-    <button (click)="productService.productDone(product)">Done</button>
+  <div class="product-details panel" *ngIf="product">
+    <h2 class="product-details__header">Product</h2>
+      <ul [ngClass]="{ 'lineThrough': product.done === true }">
+        <li>Name: {{product.name}}</li>
+        <li>IsDone: {{product.done}}</li>
+        <li>Description: {{product.desc}}</li>
+      </ul>
+    <button class="black-btn" (click)="productService.productDone(product)"><span>Done</span></button>
   </div>

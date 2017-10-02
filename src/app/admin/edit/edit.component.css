@@ -1,3 +1,6 @@
+.edit-wrap{
+    padding: 20px;
+}
 #editForm{
     padding: 50px 20px;
 }
@@ -9,6 +12,7 @@ label{
 input,
 textarea{
     margin-top: 5px;
+    width: 100%;
 }
 .group{
     margin-bottom: 20px;

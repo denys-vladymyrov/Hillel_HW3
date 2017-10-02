@@ -66,9 +66,6 @@ export class EditComponent implements OnInit {
   next(){
     let resultId = this.id + 1
 
-    console.log("result: " + resultId);
-    console.log(this.productService.getProductAmount());
-
     if(resultId >= this.productService.getProductAmount() - 1){
       this.nextDisabled = true;
     }

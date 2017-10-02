@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
-    selector: 'home-app',
+    selector: 'productList-app',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
   })

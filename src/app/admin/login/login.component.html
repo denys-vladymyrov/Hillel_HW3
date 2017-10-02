@@ -1,13 +1,31 @@
-<div *ngIf="!message && !authService.isLoggedIn">
-    <label for="login">Login</label>
-    <input #login type="text" id="login">
-  
-    <label for="password">Password</label>
-    <input #password type="password" id="password">
-  
-    <button (click)="logIn(login.value, password.value)">Login</button>
+
+<div class="login-wrap" *ngIf="!message && !authService.isLoggedIn">
+  <div class=login-section>
+    
+    <form class="login-form">
+        <h1>Login Form</h1>
+
+        <div>
+            <input #login type="text" id="login" placeholder="Username">
+        </div>
+        <!-- <label for="login">Login</label> -->
+        <!-- <input #login type="text" id="login"> -->
+
+        <div>
+            <input #password type="password" id="password" placeholder="Password"> 
+        </div>
+      
+        <!-- <label for="password">Password</label>
+        <input #password type="password" id="password"> -->
+      
+        <button (click)="logIn(login.value, password.value)">Login</button>
+    </form>
   </div>
-  <div *ngIf="message">
+</div>
+
+
+
+  <div *ngIf="message" class="message">
     {{message}}
   </div>
   <button *ngIf="authService.isLoggedIn"

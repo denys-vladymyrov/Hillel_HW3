@@ -1,7 +1,9 @@
-
-  <ul>
-    <li *ngFor="let item of productService.shoppingList; let i = index" (click)="onSelect(i)" [ngClass]="{ 'lineThrough': item.done === true }">{{item.name}}</li>
-  </ul>
+  <div class="product-list panel">
+    <h2 class="product-list__header">TODO</h2>
+    <ul>
+      <li *ngFor="let item of productService.shoppingList; let i = index" (click)="onSelect(i)" [ngClass]="{ 'lineThrough': item.done === true }">{{item.name}}</li>
+    </ul>
+  </div>
   
   
 

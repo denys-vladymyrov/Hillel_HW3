@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,
+body{
+    font-family: 'Roboto';
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+}
+.center{
+    text-align: center;
+}
+.panel{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #FAECDC;
+    box-shadow: 2px 2px 2px #222;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 10px;
+}
+
+.panel-left-top{
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #FAECDC;
+    box-shadow: 2px 2px 2px #222;
+    position: absolute;
+    top: 30%;
+    transform: translate(0, -50%);
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+
+.panel-right{
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #FAECDC;
+    box-shadow: 2px 2px 2px #222;
+    position: absolute;
+    top: 73%;
+    left: 0;
+    margin-left: 20px;
+    transform: translate(0, -50%);
+    padding-bottom: 10px;
+}
+
+.panel h2,
+.panel-left-top h2{
+    text-align: center;
+}
+
+.panel ul{
+    padding: 0 10px;
+}
+.panel ul li{
+    background-color: rgb(251, 232, 210);
+    margin: 8px 5px;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #222;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;   
+}
+    
+.panel ul li:hover{
+    background-color: rgb(234, 195, 149);
+}
+
+.black-btn{
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: rgba(35, 31, 32, 0.9);
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+.black-btn span{
+    display: block;
+    padding: 12px 24px;
+}
+.black-btn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.black-btn:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}

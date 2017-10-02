@@ -1,0 +1,33 @@
+
+.nav-wrap{
+    background-color: rgba(35, 31, 32, 0.9);
+    padding: 20px 0;
+}
+.top-nav{
+    text-align: center;
+}
+.top-nav a{
+    color: #f5f3f0;
+    padding: 10px;
+    font-size: 18px;
+}
+.top-nav ul li{
+    display: inline-block;
+}
+
+.top-nav ul li a{
+    transition: 0.3s ease;
+  
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+
+    padding: 20px 15px;
+    
+}
+.top-nav ul li a:hover {
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    padding: 6px 0;
+    margin: 0 15px;
+}
