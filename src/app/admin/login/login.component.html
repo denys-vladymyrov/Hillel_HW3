@@ -2,23 +2,25 @@
 <div class="login-wrap" *ngIf="!message && !authService.isLoggedIn">
   <div class=login-section>
     
-    <form class="login-form">
+    <form class="login-form" [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit(loginForm)">
         <h1>Login Form</h1>
 
         <div>
-            <input #login type="text" id="login" placeholder="Username">
+            <input formControlName="login"  type="text" id="login" placeholder="Username">
+            <div *ngIf="formErrors.login" class="alert">
+              {{formErrors.login}}
+            </div>
         </div>
-        <!-- <label for="login">Login</label> -->
-        <!-- <input #login type="text" id="login"> -->
 
         <div>
-            <input #password type="password" id="password" placeholder="Password"> 
+            <input formControlName="password"  type="password" id="password" placeholder="Password"> 
+            <div *ngIf="formErrors.password" class="alert">
+              {{formErrors.password}}
+            </div>
         </div>
       
-        <!-- <label for="password">Password</label>
-        <input #password type="password" id="password"> -->
-      
-        <button (click)="logIn(login.value, password.value)">Login</button>
+        <button >Login</button>
+        <!-- <button (click)="logIn(login.value, password.value)">Login</button> -->
     </form>
   </div>
 </div>

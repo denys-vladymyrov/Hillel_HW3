@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-// import { ProductListComponent } from './product-list/product-list.component';
 import { SharedModule } from './shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component'
 

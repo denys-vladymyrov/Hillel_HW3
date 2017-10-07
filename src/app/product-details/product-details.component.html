@@ -1,6 +1,6 @@
   <div class="product-details panel" *ngIf="product">
     <h2 class="product-details__header">Product</h2>
-      <ul [ngClass]="{ 'lineThrough': product.done === true }">
+      <ul [class.lineThrough]="product.done">
         <li>Name: {{product.name}}</li>
         <li>IsDone: {{product.done}}</li>
         <li>Description: {{product.desc}}</li>

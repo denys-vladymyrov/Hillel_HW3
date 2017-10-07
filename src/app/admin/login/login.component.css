@@ -163,6 +163,13 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
 }
 
+.login-form button:disabled{
+    background: grey;
+    color: #fff;
+    border: 1px solid grey;
+    cursor: not-allowed;
+}
+
 .message{
     font-size: 20px;
     position: absolute;
