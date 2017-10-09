@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule }   from '@angular/http';
 
 import {Routes, RouterModule} from '@angular/router';
 
@@ -25,6 +26,7 @@ import { AdminModule } from './admin/admin.module';
     FormsModule,
     AdminModule,
     SharedModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductServices],

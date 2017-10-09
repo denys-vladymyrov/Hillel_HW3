@@ -1,6 +1,6 @@
 import { Component , Input, OnDestroy, OnInit } from '@angular/core';
 import { ProductServices } from '.././shared/product.service'
-import { Product } from '.././shared/product';
+import { Product } from '.././shared/Product';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 
@@ -11,6 +11,7 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
   })
   export class ProductListComponent{
 
+    public products: Product[];
     private subscription: Subscription;
     private id: number;
     @Input() redirect: string;
@@ -29,7 +30,12 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
             this.lastId = params.id;
         });
 
+        this.productService.getAll().subscribe(data => {
+            this.products = data;
+        });
+
     }
+
    
     
     onSelect(id){
