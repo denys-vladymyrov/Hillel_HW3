@@ -29,11 +29,6 @@ import { ActivatedRoute, Params, Router} from '@angular/router';
         this.activatedRoute.params.forEach((params: Params) => {
             this.lastId = params.id;
         });
-
-        this.productService.getAll().subscribe(data => {
-            this.products = data;
-        });
-
     }
 
    

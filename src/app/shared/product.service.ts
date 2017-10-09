@@ -26,28 +26,15 @@ export class ProductServices{
       done: boolean = false;
 
       constructor(private http: Http){   
-        this.getAll().subscribe(data => {
-          this.shoppingList = data;
-        });
+        this.getAll();
+        this.getById(0);
       }
 
       addProduct(product: HTMLInputElement, desc: HTMLTextAreaElement): void{
         if(product.value){
           let newProduct = new Product(product.value, false, desc.value);
           
-          this.postProduct(newProduct).subscribe(
-            data => {
-              this.receivedProduct=data;
-              this.done=true;
-              console.log("POST!!!");
-
-              this.getAll().subscribe(data => {
-                this.shoppingList = data;
-              });
-      
-            },
-            error => console.log(error.statusText)
-          );
+          this.postProduct(newProduct);
             
           product.value = "";
         }
@@ -57,14 +44,29 @@ export class ProductServices{
         // const body = JSON.stringify(product);
         // let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
 
+        // return this.http.post('http://localhost:3000/products', product)
+        // // return this.http.post('http://localhost:3000/products', body, { headers: headers })
+        //           .map((resp:Response)=>resp.json())
+        //           .catch((error:any) =>{return Observable.throw(error);}); 
+
         return this.http.post('http://localhost:3000/products', product)
-        // return this.http.post('http://localhost:3000/products', body, { headers: headers })
-                  .map((resp:Response)=>resp.json())
-                  .catch((error:any) =>{return Observable.throw(error);}); 
+          .subscribe(
+            result => {
+                if(result.status === 200){
+                  this.shoppingList.push(product);
+                }
+            },
+            error => console.log(error.statusText)
+          )
       }
 
-      getAll(): Observable<any>{
-        return this.http.get("http://localhost:3000/products").map((data: Response) => data.json());
+      getAll(){
+        // return this.http.get("http://localhost:3000/products").map((data: Response) => data.json());
+         this.http.get("http://localhost:3000/products").subscribe((data: Response) => this.shoppingList = data.json());
+      }
+
+      getById(id: number){
+        this.http.get("http://localhost:3000/products/id/" + id).subscribe((data: Response) => console.log(data.json()));
       }
 
       getProduct(id: number): Product{
